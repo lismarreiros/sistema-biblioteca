@@ -1,8 +1,13 @@
 ﻿using sis_biblioteca;
 
 Livro greatGastby = new Livro(1, "Great Gatsby");
+Livro domCasmurro = new Livro(2, "Dom Casmurro");
 greatGastby.Emprestar("José");
-greatGastby.Emprestar("João");
-// greatGastby.Devolver();
-    
+
+// testes da classe Livro!
+Console.WriteLine($"{greatGastby.titulo} - status: {greatGastby.status}");
+Console.WriteLine($"{domCasmurro.titulo} - status: {domCasmurro.status}");
         
+domCasmurro.Emprestar("Camille");
+greatGastby.Devolver();
+Console.WriteLine($"locatário(?): {greatGastby.locatario}");

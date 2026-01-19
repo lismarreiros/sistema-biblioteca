@@ -20,7 +20,7 @@ public class Livro
         {
             locatario = nomeLocatario ;
             status = "Emprestado";
-            Console.WriteLine($"{titulo} foi emprestado com sucesso ao {locatario}");
+            Console.WriteLine($"{titulo} foi emprestado com sucesso para {locatario}");
         }
         else
         {
