@@ -1,3 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using sis_biblioteca;
 
-Console.WriteLine("Hello, World!");
+Livro greatGastby = new Livro(1, "Great Gatsby");
+greatGastby.Emprestar("José");
+greatGastby.Emprestar("João");
+// greatGastby.Devolver();
+    
+        
