@@ -27,7 +27,15 @@ Console.WriteLine("Bem vindo a Biblioteca Ponei!");
 Console.WriteLine("Por favor, registre o locatário");
 Console.WriteLine("Digite o seu nome:");
 string usuarioNome = Console.ReadLine().Trim();
+
 Pessoa pessoa = new Pessoa(1, usuarioNome);
+Console.WriteLine("Pessoas cadastradas >>>> ");
+foreach (var p in biblioteca.pessoas)
+{
+    Console.WriteLine(p.nome);
+}
+biblioteca.CadastroPessoa(pessoa);
+
 var menu = """
            Escolha uma opção:
            1 - Listar todos os livros 
@@ -48,48 +56,52 @@ while (opcaoEscolhida != 3)
     {
         Console.WriteLine("Digite o id do livro escolhido:");
         int idLivroEscolhido = int.Parse(Console.ReadLine());
-        var livroEncontrado = arrayLivros.Find(x => x.id == idLivroEscolhido);
+        var livroEncontrado = biblioteca.livros.Find(x => x.id == idLivroEscolhido);
         if (livroEncontrado != null)
         {
             biblioteca.EmprestarLivro(livroEncontrado, pessoa);
             Console.WriteLine(menu);
             opcaoEscolhida = int.Parse(Console.ReadLine());
         }
-   
+        else
+        {
+            Console.WriteLine("Erro!");
+            return;
+        }
     } 
 }
 
 
 
-// greatGastby.Emprestar("José");
+// greatGatsby.Emprestar("José");
 
 // testes da classe Livro!
-// Console.WriteLine($"{greatGastby.titulo} - status: {greatGastby.status}");
+// Console.WriteLine($"{greatGatsby.titulo} - status: {greatGatsby.status}");
 // Console.WriteLine($"{domCasmurro.titulo} - status: {domCasmurro.status}");
         
 // domCasmurro.Emprestar("Camille");
-// greatGastby.Devolver();
-// Console.WriteLine($"locatário(?): {greatGastby.locatario}");
+// greatGatsby.Devolver();
+// Console.WriteLine($"locatário(?): {greatGatsby.locatario}");
 //
 // Pessoa maria = new Pessoa(1, "Maria");
 // Pessoa joao = new Pessoa(2, "João");
 
-// pessoa.PegarLivro(greatGastby);
+// pessoa.PegarLivro(greatGatsby);
 // pessoa.PegarLivro(domCasmurro);
 
-// Console.WriteLine($"teste: {greatGastby.status}");
+// Console.WriteLine($"teste: {greatGatsby.status}");
 
-// biblioteca.CadastroLivro(greatGastby);
+// biblioteca.CadastroLivro(greatGatsby);
 // biblioteca.CadastroLivro(domCasmurro);
 // biblioteca.CadastroPessoa(maria);
 // biblioteca.CadastroPessoa(joao);
 //
 // biblioteca.ListarLivros();
-// biblioteca.EmprestarLivro(greatGastby, maria);
-// Console.WriteLine($"Livro {greatGastby.titulo} está {greatGastby.status}, pois {greatGastby.locatario} pegou emprestado");
-// greatGastby.Devolver();
-// biblioteca.DevolverLivro(greatGastby, maria);
-// // Console. WriteLine($"Livro {greatGastby.titulo} está {greatGastby.status}, pois {maria.nome} já devolveu!");
+// biblioteca.EmprestarLivro(greatGatsby, maria);
+// Console.WriteLine($"Livro {greatGatsby.titulo} está {greatGatsby.status}, pois {greatGatsby.locatario} pegou emprestado");
+// greatGatsby.Devolver();
+// biblioteca.DevolverLivro(greatGatsby, maria);
+// // Console. WriteLine($"Livro {greatGatsby.titulo} está {greatGatsby.status}, pois {maria.nome} já devolveu!");
 //
 // biblioteca.EmprestarLivro(domCasmurro, maria);
 // Console.WriteLine("Livros da Maria: ");
