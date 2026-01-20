@@ -16,12 +16,10 @@ public class Pessoa
     public void PegarLivro(Livro livro)
     {
         livros.Add(livro);
-        Console.WriteLine($"{livro} adicionado com sucesso.");
     }
 
     public void DevolverLivro(Livro livro)
     {
         livros.Remove(livro);
-        Console.WriteLine($"{livro} removido com sucesso.");
     }
 }
